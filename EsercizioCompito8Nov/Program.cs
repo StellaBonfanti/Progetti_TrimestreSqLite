@@ -26,11 +26,16 @@ namespace EsercizioCompito8Nov
                 }
             
                 using (var db = new ClientiContext()) //using così da non doverlo continuamente ricrearlo ogni volta
+                //creando una variabile generica db dopo un po' si "chiude" e viene distrutto.
                 {
-                    //clienticontext() crea un oggetto uguale (istanza) chiamato clienticontext .
-                    //questa istanza è separato, ha infatti le sue proprietà e metodi che può essere utilizzato per eseguire operazioni
+                    //clienticontext() crea un oggetto uguale (istanza) chiamato db.
+                    //db è quindi un clientcontext con le proprietà messe prima
+                    //questa istanza è separata, ha infatti le sue proprietà e metodi che possono essere utilizzati per eseguire operazioni
                     //sul database stesso.
                     //quindi crea una copia che si collega alla originale per non modificare la originale direttamente
+
+                    //non puoi usare la classe clientcontext perchè visual è così, quindi devi creare una variabile per richiamare
+                    //i vari metodi/proprietà
                     System.Console.WriteLine("Scegli tra 1: popola il database");
                     System.Console.WriteLine("2: visualizza tutti gli ordini");
                     System.Console.WriteLine("3: visualizza gli ordini di un cliente specifico");
@@ -84,6 +89,7 @@ namespace EsercizioCompito8Nov
                             break;
                     }
                 }
+                Console.ReadKey();
             }
 
         static void PopolaDatabase(ClientiContext db)
@@ -123,6 +129,8 @@ namespace EsercizioCompito8Nov
             //un contesto del database è un oggetto che rappresenta la connessione al database stesso 
             //e fornisce metodi per eseguire query, inserire, modificare o cancellare dati, e altro ancora.
             //In pratica, è come un "intermediario" tra il tuo programma e il database
+
+            //qui crei un context che ti permette di accedere ai dati del database
             var ordini = context.Ordini.ToList();
             foreach (var ordine in ordini)
             {
@@ -150,7 +158,7 @@ namespace EsercizioCompito8Nov
         {
 
             var ordine = db.Ordini.Find(ordineId); //cerca rispetto ad una chiave primaria, una chiave univoca per identificare le
-            //righe del database
+            //righe del database ed è arbitraria (ovvero la scegli tu rispetto alle proprietà)
             //ad esempio: un nome è impossibile renderlo chiave primaria, perchè potrebbe non essere univoco. Un id, invece, si
             if (ordine != null)
             {
