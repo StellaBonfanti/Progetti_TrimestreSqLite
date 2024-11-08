@@ -97,19 +97,19 @@ namespace EsercizioCompito8Nov
             // Creazione dei Clienti
             List<Cliente> listaClienti =
             [
-                new (){ClienteId=1, Cognome= "Rossi", Nome= "Mario", DataNascita= new DateTime(1980, 1, 1), LuogoNascita= "Roma"},
-                new (){ClienteId=2, Cognome= "Bianchi", Nome= "Luca", DataNascita= new DateTime(1985, 6, 15), LuogoNascita= "Milano"},
-                new (){ClienteId=3, Cognome= "Verdi", Nome= "Giovanni", DataNascita= new DateTime(1990, 3, 20), LuogoNascita= "Napoli"}
+                new (){ Cognome= "Rossi", Nome= "Mario", DataNascita= new DateTime(1980, 1, 1), LuogoNascita= "Roma"},
+                new (){Cognome= "Bianchi", Nome= "Luca", DataNascita= new DateTime(1985, 6, 15), LuogoNascita= "Milano"},
+                new (){Cognome= "Verdi", Nome= "Giovanni", DataNascita= new DateTime(1990, 3, 20), LuogoNascita= "Napoli"}
             ];
         
             // Creazione della lista degli Ordini
             List<Ordine> listaOrdini =
             [
-                new (){OrdineId=1, DataOrdine= DateTime.Now.Date, ImportoTotale = 1200.45m, ClienteId = 1},
-                new (){OrdineId=2, DataOrdine= DateTime.Now.AddDays(-5).Date, ImportoTotale = 3200.65m, ClienteId = 1},
-                new (){OrdineId=3, DataOrdine= new DateTime(2019,10,20).Date, ImportoTotale = 5200.45m, ClienteId = 1},
-                new (){OrdineId=4, DataOrdine= DateTime.Now.Date, ImportoTotale = 5200.45m, ClienteId = 2},
-                new (){OrdineId=5, DataOrdine= new DateTime(2019,08,20).Date, ImportoTotale = 7200.45m, ClienteId = 2}
+                new (){DataOrdine= DateTime.Now.Date, ImportoTotale = 1200.45m, ClienteId = 1},
+                new (){DataOrdine= DateTime.Now.AddDays(-5).Date, ImportoTotale = 3200.65m, ClienteId = 1},
+                new (){DataOrdine= new DateTime(2019,10,20).Date, ImportoTotale = 5200.45m, ClienteId = 1},
+                new (){DataOrdine= DateTime.Now.Date, ImportoTotale = 5200.45m, ClienteId = 2},
+                new (){DataOrdine= new DateTime(2019,08,20).Date, ImportoTotale = 7200.45m, ClienteId = 2}
             ];
         
             // Inserire clienti e ordini
